@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .button-pushable:focus:not(:focus-visible) {
+    @apply outline-none;
+  }
+  .button-pushable:hover .frontble {
+    @apply transform -translate-y-2;
+  }
+  .button-pushable:active .frontble {
+    @apply transform translate-y-0;
+  }
+}

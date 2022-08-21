@@ -2,17 +2,21 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  content: ["./src/**/*.{js, jsx, ts, tsx}"],
+  content: [
+    "./src/components/**/*.{js,jsx,ts,tsx}",
+    "./src/layouts/**/*.{js,jsx,ts,tsx}",
+    "./src/pages/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
     fontFamily: {
-      sans: ["Urbanist", ...defaultTheme.fontFamily.sans],
+      sans: ["Outfit", ...defaultTheme.fontFamily.sans],
     },
     screens: {
       xs: "436px",
       sm: "640px",
       md: "768px",
       lg: "1024px",
-      xl: "1100px",
+      xl: "1092px",
     },
     colors: ({ colors }) => ({
       transparent: colors.transparent,

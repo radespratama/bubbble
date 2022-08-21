@@ -1,19 +1,27 @@
 {
-  "name": "bubble-kit",
+  "name": "bubbble-kit",
   "version": "0.1.0",
+  "description": "New UI Design Resources, UI Kits, Website Design, Icons for your project",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3600",
+    "dev": "next dev -p 3500",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next build && next export",
+    "sanity:dev": "cd server && sanity start",
+    "sanity:deploy": "cd server && sanity deploy"
   },
   "dependencies": {
+    "@sanity/client": "^3.3.3",
+    "@sanity/image-url": "^1.0.1",
     "framer-motion": "^7.2.0",
     "next": "12.2.5",
+    "next-sanity": "^0.8.1",
     "nextjs-progressbar": "^0.0.14",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "windsplit": "^0.1.0"
   },
   "devDependencies": {
     "@types/node": "18.7.5",
