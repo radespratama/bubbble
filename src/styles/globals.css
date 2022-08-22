@@ -29,10 +29,42 @@
   .pushable:active .front {
     transform: translateY(0px);
   }
+  .say {
+    @apply ml-1 inline-block;
+    animation-name: waveHand;
+    animation: waveHand 2.5s infinite;
+    transform-origin: 70% 70%;
+  }
 
   @keyframes textclip {
     to {
       background-position: 200% center;
+    }
+  }
+  @keyframes waveHand {
+    0% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(14deg);
+    }
+    20% {
+      transform: rotate(-8deg);
+    }
+    30% {
+      transform: rotate(14deg);
+    }
+    40% {
+      transform: rotate(-4deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    60% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(0deg);
     }
   }
 }

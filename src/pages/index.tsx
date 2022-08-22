@@ -1,9 +1,10 @@
 import React from "react";
+import dynamic from "next/dynamic";
 import type { NextPage } from "next";
 
 import AppLayout from "@/layouts/AppLayout";
 import SEO from "@/components/SEO";
-import Hero from "@/components/Home/Hero";
+const Hero = dynamic(() => import("@/components/Home/Hero"));
 
 const Home: NextPage = () => {
   return (

@@ -20,6 +20,7 @@ export default function AppLayout({
     container: wtl(`
       flex-wrap 
       flex-grow
+      pattern-graph
       antialiased
     `),
   };
