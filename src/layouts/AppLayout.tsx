@@ -7,8 +7,8 @@ const Footer = Dynamic(() => import("@/components/Footer"));
 
 interface LayoutProps {
   children: ReactNode;
-  isHeader: boolean;
-  isFooter: boolean;
+  isHeader?: boolean;
+  isFooter?: boolean;
 }
 
 export default function AppLayout({
@@ -16,21 +16,18 @@ export default function AppLayout({
   isHeader,
   isFooter,
 }: LayoutProps) {
+  const tw = {
+    container: wtl(`
+      flex-wrap 
+      flex-grow
+      antialiased
+    `),
+  };
   return (
     <>
       <Header isHeader={isHeader} />
-      <main className={style.container}>{children}</main>
+      <main className={tw.container}>{children}</main>
       <Footer isFooter={isFooter} />
     </>
   );
 }
-
-const style = {
-  container: wtl(`
-    flex-wrap 
-    flex-grow 
-    px-4
-    max-w-screen-lg
-    mx-auto
-  `),
-};

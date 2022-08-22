@@ -4,7 +4,7 @@
   "description": "New UI Design Resources, UI Kits, Website Design, Icons for your project",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3500",
+    "dev": "next dev -p 3005",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -21,6 +21,7 @@
     "nextjs-progressbar": "^0.0.14",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-scroll": "^1.8.7",
     "windsplit": "^0.1.0"
   },
   "devDependencies": {

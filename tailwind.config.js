@@ -12,11 +12,11 @@ module.exports = {
       sans: ["Outfit", ...defaultTheme.fontFamily.sans],
     },
     screens: {
-      xs: "436px",
-      sm: "640px",
-      md: "768px",
+      xs: "640px",
+      sm: "768px",
+      md: "900px",
       lg: "1024px",
-      xl: "1092px",
+      xl: "1100px",
     },
     colors: ({ colors }) => ({
       transparent: colors.transparent,

@@ -32,7 +32,7 @@ class MyDocument extends Document {
           />
           <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
         </Head>
-        <body className="text-white bg-gray-950">
+        <body className="text-gray-950 bg-white">
           <Main />
           <NextScript />
         </body>

@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 
 import AppLayout from "@/layouts/AppLayout";
 import SEO from "@/components/SEO";
-import Intro from "@/components/Home/Intro";
+import Hero from "@/components/Home/Hero";
 
 const Home: NextPage = () => {
   return (
@@ -14,7 +14,7 @@ const Home: NextPage = () => {
         image={`${process.env.NEXT_PUBLIC_BASE_URL}/static/bubbble-banner.png`}
       />
       <AppLayout isHeader isFooter>
-        <Intro />
+        <Hero />
       </AppLayout>
     </>
   );

@@ -1,73 +1,53 @@
-import { Coffee, Equals } from "phosphor-react";
+import React from "react";
 import wtl from "windsplit";
+import { Equals, Coffee } from "phosphor-react";
+import { ButtonPushable } from "@/components/Button";
 
-import ActiveLink, { A } from "./NavLink";
 import { IconBubbble } from "./Icon";
+import ActiveLink, { A } from "./Links";
 
 export default function Header({ isHeader }: { isHeader?: boolean }) {
-  const style = {
-    containerHeader: wtl(`
-      fixed w-full top-0
-      left-0 z-[40]
-      bg-gray-950/40 backdrop-blur
+  const tw = {
+    headerContainer: wtl(`
+      fixed w-full top-0 left-0
+      z-30
     `),
-    nav: wtl(`
-      max-w-screen-lg mx-auto
-      transition-all duration-300
-      grid grid-cols-3 gap-4
-      px-4 py-4 md:py-5
+    navigation: wtl(`
+      max-w-screen-xl mx-auto border-b
+      border-r border-l border-gray-100
+      rounded-br-2xl grid-cols-3 gap-4
+      backdrop-blur-md bg-white/10
+      px-4 py-3 grid rounded-bl-2xl
     `),
-    icon: wtl(`
-      h-9 w-9 fill-white
-    `),
-    navContent: wtl(`
-      flex items-center justify-end
-      col-span-1 md:col-span-2 
-      space-x-3
-    `),
-    buttonPushable: wtl(`
-      bg-sky-600 rounded-lg
-      border-none p-0 outline-offset-4 
-      cursor-pointer select-none button-pushable
-    `),
-    frontble: wtl(`
-      px-3 py-2 rounded-lg
-      inline-flex items-center
-      transform -translate-y-[6px]
-      text-base bg-sky-500 frontble
-      will-change-transform transition-transform 
-      duration-300
-    `),
+    icon: wtl(`h-9 w-9 fill-gray-900`),
+    column: wtl(`flex items-center col-span-1`),
     hideAndShow: wtl(`hidden md:inline`),
-    centering: wtl(`mx-auto md:mx-0`),
   };
-
   if (isHeader) {
     return (
-      <header className={style.containerHeader}>
-        <nav className={style.nav}>
-          <button className="inline md:hidden col-span-1">
-            <Equals size={24} />
-          </button>
-          <A href="/" className={`${style.centering} col-span-1`}>
-            <IconBubbble className={style.icon} />
-          </A>
-          <div className={style.navContent}>
-            <ActiveLink className={style.hideAndShow} href="/">
+      <header className={tw.headerContainer}>
+        <nav className={tw.navigation}>
+          <div className="col-span-1 block md:hidden">
+            <button className="p-[6px]">
+              <Equals size={24} />
+            </button>
+          </div>
+          <div className={`${tw.column} justify-center md:justify-start`}>
+            <A href="/"><IconBubbble className={tw.icon} /></A>
+          </div>
+          <div className={`${tw.column} md:col-span-2 justify-end space-x-3`}>
+            <ActiveLink className={tw.hideAndShow} href="/">
               Home
             </ActiveLink>
-            <ActiveLink className={style.hideAndShow} href="/category">
+            <ActiveLink className={tw.hideAndShow} href="/category">
               Category
             </ActiveLink>
-            <ActiveLink className={style.hideAndShow} href="/report">
-              Report !
-            </ActiveLink>
-            <button className={style.buttonPushable}>
-              <span className={style.frontble}>
-                <Coffee size={20} className="md:mr-2" />
-                <span className={style.hideAndShow}>Buy me a coffee</span>
-              </span>
-            </button>
+            <ButtonPushable 
+              title="Buy us a coffee" 
+              optional="text-base -translate-y-1"
+            >
+              <Coffee size={22} className="mr-0 sm:mr-2" />
+            </ButtonPushable>
           </div>
         </nav>
       </header>

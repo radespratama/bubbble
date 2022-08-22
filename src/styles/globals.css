@@ -3,13 +3,36 @@
 @tailwind utilities;
 
 @layer components {
-  .button-pushable:focus:not(:focus-visible) {
+  .pattern-graph {
+    @apply relative z-[1];
+  }
+  .pattern-graph::before {
+    content: " ";
+    @apply absolute top-0 left-0 w-full h-full opacity-60 -z-[1] bg-[url("/static/pattern-graph.svg")];
+  }
+  .text-gradient {
+    background-image: linear-gradient(200deg, #0ea5e9 20%, #fff800 100%);
+    background-size: auto auto;
+    background-size: 200% auto;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    @apply bg-clip-text text-white;
+  }
+  .pushable:focus:not(:focus-visible) {
     @apply outline-none;
   }
-  .button-pushable:hover .frontble {
-    @apply transform -translate-y-2;
+  .pushable:hover .front {
+    transform: translateY(-7px);
   }
-  .button-pushable:active .frontble {
-    @apply transform translate-y-0;
+  .pushable:active .front {
+    transform: translateY(0px);
+  }
+
+  @keyframes textclip {
+    to {
+      background-position: 200% center;
+    }
   }
 }

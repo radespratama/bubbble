@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import wtl from "windsplit";
 import { withRouter } from "next/router";
 
 interface AProps {
@@ -41,11 +42,19 @@ function ActiveLink({
   };
   const isCurrentPath = router.pathname === href || router.asPath === href;
 
+  const tw = {
+    links: wtl(`
+      hover:text-gray-950 text-base 
+      font-medium tracking-tight 
+      md:px-2 underline-offset-[0.625rem]
+    `),
+  };
+
   return (
     <a
       className={`${
-        isCurrentPath ? "text-white underline" : "text-gray-400"
-      } ${className} hover:text-white text-base font-medium tracking-tight md:px-2 underline-offset-[0.625rem]`}
+        isCurrentPath ? "text-gray-950 underline" : "text-gray-400"
+      } ${className} ${tw.links}`}
       href={href}
       onClick={handleClick}
     >
