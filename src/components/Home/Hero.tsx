@@ -1,8 +1,11 @@
 import wtl from "windsplit";
+import { Link } from "react-scroll/modules";
 import { ArrowCircleDown } from "phosphor-react";
+
 import { ButtonPushable } from "@/components/Button";
 
 export default function Hero() {
+
   const tw = {
     container: wtl(`
       max-w-screen-xs mx-auto
@@ -12,7 +15,7 @@ export default function Hero() {
     `),
     h1: wtl(`
       text-[40px] leading-[1.15]
-      xs:text-[44px] lg:text-5xl 
+      xs:text-[44px] lg:text-5xl
       lg:leading-[1.2] tracking-tight 
       font-bold text-gray-950
     `),
@@ -45,12 +48,14 @@ export default function Hero() {
         30+ Modern screens, We are providing ready-to-use template for your
         awesome projects.
       </p>
-      <ButtonPushable
-        title="Browse Project"
-        optional="text-lg -translate-y-[9px]"
-      >
-        <ArrowCircleDown size={22} className="mr-2" />
-      </ButtonPushable>
+      <Link to="featured" spy={true} smooth={true} offset={-100} duration={400}>
+        <ButtonPushable
+          title="Browse Project"
+          optional="text-lg -translate-y-[9px]"
+        >
+          <ArrowCircleDown size={22} className="mr-2" />
+        </ButtonPushable>
+      </Link>
     </article>
   );
 }

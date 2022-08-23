@@ -3,12 +3,20 @@
 @tailwind utilities;
 
 @layer components {
-  .pattern-graph {
+  * {
+    @apply box-border scroll-smooth;
+  }
+  .pattern-graph,
+  .pattern-column {
     @apply relative z-[1];
   }
   .pattern-graph::before {
     content: " ";
     @apply absolute top-0 left-0 w-full h-full opacity-60 -z-[1] bg-[url("/static/pattern-graph.svg")];
+  }
+  .pattern-column::before {
+    content: " ";
+    @apply absolute top-0 left-0 w-full h-full opacity-10 -z-[1] bg-[url("/static/patern-column.png")];
   }
   .text-gradient {
     background-image: linear-gradient(200deg, #0ea5e9 20%, #fff800 100%);
