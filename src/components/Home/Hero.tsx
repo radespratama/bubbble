@@ -48,7 +48,7 @@ export default function Hero() {
         30+ Modern screens, We are providing ready-to-use template for your
         awesome projects.
       </p>
-      <Link to="featured" spy={true} smooth={true} offset={-100} duration={400}>
+      <Link to="featured" spy={true} smooth={true} offset={-90} duration={400}>
         <ButtonPushable
           title="Browse Project"
           optional="text-lg -translate-y-[9px]"

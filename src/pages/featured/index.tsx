@@ -2,13 +2,14 @@ import React from "react";
 import type { NextPage } from "next";
 
 import AppLayout from "@/layouts/AppLayout";
+import Intro from "@/components/Featured/Intro";
 
-const Category: NextPage = () => {
+const Featured: NextPage = () => {
   return (
     <AppLayout isHeader isFooter>
-      Category
+      <Intro />
     </AppLayout>
   );
 };
 
-export default Category;
+export default Featured;
