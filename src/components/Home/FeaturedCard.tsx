@@ -10,6 +10,7 @@ interface CardProps {
   src: string;
   avatar: string;
   author: string;
+  category: string;
 }
 
 export default function FeaturedCard({
@@ -18,6 +19,7 @@ export default function FeaturedCard({
   src,
   avatar,
   author,
+  category,
 }: CardProps) {
   const tw = {
     containerCard: wtl(`
@@ -45,6 +47,7 @@ export default function FeaturedCard({
       <Images size="w-full h-[200px]" src={src} />
       <div className="px-4 py-3">
         <h4 className={tw.cardTitle}>{title}</h4>
+        <p className="font-normal text-gray-500">{category}</p>
         <div className={tw.wrapper}>
           <Images
             size="h-7 w-7"

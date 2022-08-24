@@ -5,7 +5,6 @@ import { ArrowCircleDown } from "phosphor-react";
 import { ButtonPushable } from "@/components/Button";
 
 export default function Hero() {
-
   const tw = {
     container: wtl(`
       max-w-screen-xs mx-auto
@@ -48,7 +47,7 @@ export default function Hero() {
         30+ Modern screens, We are providing ready-to-use template for your
         awesome projects.
       </p>
-      <Link to="featured" spy={true} smooth={true} offset={-90} duration={400}>
+      <Link to="featured" spy={true} smooth={true} offset={-70} duration={400}>
         <ButtonPushable
           title="Browse Project"
           optional="text-lg -translate-y-[9px]"

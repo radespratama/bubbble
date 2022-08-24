@@ -18,7 +18,7 @@ const queryDynamicPosts = `
 `;
 
 const queryPosts = `
-  *[_type == "post"]{
+  *[_type == "post"][0..5]{
     _id,
     title,
     slug {

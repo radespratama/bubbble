@@ -11,6 +11,6 @@ export interface FeaturedProps {
     name: string;
     image: string;
   };
-  categories: [title: string];
+  categories: {[key: string]: any};
   mainImage: () => void | string;
 }
