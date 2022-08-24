@@ -2,7 +2,7 @@ import React from "react";
 import wtl from "windsplit";
 
 interface Props {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   title: string;
   onClick?: () => void;
   optional?: string;

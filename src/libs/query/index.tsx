@@ -24,9 +24,6 @@ const queryPosts = `
     slug {
       current
     },
-    shortDescription,
-    templateUrl,
-    publishedAt,
     author -> {
       name,
       image

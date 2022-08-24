@@ -20,7 +20,7 @@ export default function Images({
       <Image
         src={src}
         alt={alt}
-        className={`${className} z-[2]`}
+        className={`${className} z-[2] unblur`}
         objectFit="cover"
         layout="fill"
       />

@@ -41,6 +41,18 @@
     animation: waveHand 2.5s infinite;
     transform-origin: 70% 70%;
   }
+  .unblur {
+    animation: unBlur 1s linear;
+  }
+
+  @keyframes unBlur {
+    from {
+      filter: blur(10px);
+    }
+    to {
+      filter: blur(0);
+    }
+  }
 
   @keyframes textclip {
     to {
