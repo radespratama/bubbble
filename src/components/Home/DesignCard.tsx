@@ -2,7 +2,7 @@ import React from "react";
 import wtl from "windsplit";
 
 import { A } from "@/components/Links";
-import Images from "../Images";
+import Images from "@/components/Images";
 
 interface CardProps {
   title: string;
@@ -13,7 +13,7 @@ interface CardProps {
   category: string;
 }
 
-export default function FeaturedCard({
+export default function DesignCard({
   title,
   href,
   src,

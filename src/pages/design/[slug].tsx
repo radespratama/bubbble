@@ -1,8 +1,8 @@
 import React from "react";
 import type { NextPage, GetStaticProps, GetStaticPaths } from "next";
 
-const FeaturedList: NextPage = () => {
-  return <div>FeaturedList</div>;
+const DesignList: NextPage = () => {
+  return <div>DesignList</div>;
 };
 
-export default FeaturedList;
+export default DesignList;

@@ -1,4 +1,4 @@
-export interface FeaturedProps {
+export interface DesignProps {
   _id?: string;
   title: string;
   slug: {

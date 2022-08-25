@@ -39,8 +39,8 @@ export default function Header({ isHeader }: { isHeader?: boolean }) {
             <ActiveLink className={tw.hideAndShow} href="/">
               Home
             </ActiveLink>
-            <ActiveLink className={tw.hideAndShow} href="/featured">
-              Featured
+            <ActiveLink className={tw.hideAndShow} href="/design">
+              Design
             </ActiveLink>
             <ButtonPushable 
               title="Buy us a coffee" 

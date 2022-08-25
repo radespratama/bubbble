@@ -4,16 +4,16 @@ import { useRouter } from "next/router";
 import type { NextPage, GetServerSideProps } from "next";
 
 import { sanityClient } from "@/libs/config/sanity";
-import { FeaturedProps } from "@/libs/types/typing";
+import { DesignProps } from "@/libs/types/typing";
 import { queryPosts } from "@/libs/query";
 
 import AppLayout from "@/layouts/AppLayout";
 
 import SEO from "@/components/SEO";
 import Hero from "@/components/Home/Hero";
-const FeaturedList = dynamic(() => import("@/components/Home/FeaturedList"));
+const DesignList = dynamic(() => import("@/components/Home/DesignList"));
 
-const Home: NextPage<{ featured: [FeaturedProps] }> = ({ featured }) => {
+const Home: NextPage<{ design: [DesignProps] }> = ({ design }) => {
   const { asPath } = useRouter();
   return (
     <>
@@ -25,7 +25,7 @@ const Home: NextPage<{ featured: [FeaturedProps] }> = ({ featured }) => {
       />
       <AppLayout isHeader isFooter>
         <Hero />
-        <FeaturedList featured={featured} />
+        <DesignList design={design} />
       </AppLayout>
     </>
   );
@@ -36,11 +36,11 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     "Cache-Control",
     "public, s-maxage=10, stale-while-revalidate=59"
   );
-  const featured = await sanityClient.fetch(queryPosts);
+  const design = await sanityClient.fetch(queryPosts);
 
   return {
     props: {
-      featured,
+      design,
     },
   };
 };

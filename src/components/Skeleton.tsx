@@ -1,7 +1,7 @@
 import React from "react";
 import wtl from "windsplit";
 
-function SkeletonFeatured() {
+export function SkeletonDesign() {
   const tw = {
     containerCard: wtl(`
       col-span-12 sm:col-span-6 md:col-span-4
@@ -31,5 +31,3 @@ function SkeletonFeatured() {
     </div>
   );
 }
-
-export { SkeletonFeatured };

@@ -2,24 +2,24 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import wtl from "windsplit";
 
-import { FeaturedProps } from "@/libs/types/typing";
+import { DesignProps } from "@/libs/types/typing";
 import { urlFor } from "@/libs/config/sanity";
 
-import FeaturedCard from "./FeaturedCard";
+import DesignCard from "./DesignCard";
 import { ButtonPushable } from "../Button";
-import { SkeletonFeatured } from "@/components/Skeleton";
+import { SkeletonDesign } from "@/components/Skeleton";
 import { ArrowBendDoubleUpRight } from "phosphor-react";
 
-export default function Featured({ featured }: { featured: [FeaturedProps] }) {
+export default function DesignList({ design }: { design: [DesignProps] }) {
   const [loading, setLoading] = useState<boolean>(true);
   useEffect(() => {
-    if (featured) {
+    if (design) {
       setTimeout(() => {
         setLoading(false);
       }, 3000);
     }
     return () => clearTimeout();
-  }, [featured]);
+  }, [design]);
 
   const skeletonContent = Array(6).fill("");
   const router = useRouter();
@@ -47,19 +47,19 @@ export default function Featured({ featured }: { featured: [FeaturedProps] }) {
       <section className={tw.containerLayout}>
         {loading ? (
           skeletonContent.map((index) => (
-            <SkeletonFeatured key={`${index}-${Math.random()}`} />
+            <SkeletonDesign key={`${index}-${Math.random()}`} />
           ))
         ) : (
           <>
-            {featured?.map((feature) => (
-              <FeaturedCard
-                key={feature._id}
-                title={feature.title}
-                avatar={urlFor(feature.author.image).url()}
-                author={feature.author.name}
-                category={feature.categories[0].title}
-                href={`/featured/${feature.slug.current}`}
-                src={urlFor(feature.mainImage).url()}
+            {design?.map((des) => (
+              <DesignCard
+                key={des._id}
+                title={des.title}
+                avatar={urlFor(des.author.image).url()}
+                author={des.author.name}
+                category={des.categories[0].title}
+                href={`/design/${des.slug.current}`}
+                src={urlFor(des.mainImage).url()}
               />
             ))}
           </>
