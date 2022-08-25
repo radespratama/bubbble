@@ -23,6 +23,7 @@ export default function Images({
         className={`${className} z-[2] unblur`}
         objectFit="cover"
         layout="fill"
+        loading="lazy"
       />
     </div>
   );

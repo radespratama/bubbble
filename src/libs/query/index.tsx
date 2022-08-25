@@ -1,5 +1,5 @@
 const queryDynamicPosts = `
-  *[_type == "post" && slug.current == $slug]{
+  *[_type == "post"] | order(_createdAt asc){
     _id,
     title,
     slug {

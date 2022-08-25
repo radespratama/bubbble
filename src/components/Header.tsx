@@ -45,6 +45,7 @@ export default function Header({ isHeader }: { isHeader?: boolean }) {
             <ButtonPushable 
               title="Buy us a coffee" 
               optional="text-base -translate-y-1"
+              size="px-4 md:px-6 py-2"
             >
               <Coffee size={22} className="mr-0 sm:mr-2" />
             </ButtonPushable>

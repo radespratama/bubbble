@@ -6,9 +6,10 @@ interface Props {
   title: string;
   onClick?: () => void;
   optional?: string;
+  size?: string;
 }
 
-export function ButtonPushable({ children, title, optional, onClick }: Props) {
+export function ButtonPushable({ children, title, optional, onClick, size }: Props) {
   const value = "Buy us a coffee";
 
   const tw = {
@@ -18,7 +19,7 @@ export function ButtonPushable({ children, title, optional, onClick }: Props) {
       pushable
     `),
     layoutFront: wtl(`
-      flex items-center px-6 py-2 rounded-lg
+      flex items-center ${size} rounded-lg
       ${optional} bg-white border-[1.8px] border-gray-950 
       text-gray-950 transform will-change-transform
       transition-transform duration-200 ease-in front

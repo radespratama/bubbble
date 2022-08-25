@@ -10,8 +10,9 @@ import { queryPosts } from "@/libs/query";
 import AppLayout from "@/layouts/AppLayout";
 
 import SEO from "@/components/SEO";
-import Hero from "@/components/Home/Hero";
-const DesignList = dynamic(() => import("@/components/Home/DesignList"));
+import Hero from "@/components/Hero";
+import ChildLayout from "@/layouts/ChildLayout";
+const DesignList = dynamic(() => import("@/components/DesignList"));
 
 const Home: NextPage<{ design: [DesignProps] }> = ({ design }) => {
   const { asPath } = useRouter();
@@ -25,7 +26,9 @@ const Home: NextPage<{ design: [DesignProps] }> = ({ design }) => {
       />
       <AppLayout isHeader isFooter>
         <Hero />
-        <DesignList design={design} />
+        <ChildLayout id="featured">
+          <DesignList design={design} useButtonMore />
+        </ChildLayout>
       </AppLayout>
     </>
   );
