@@ -1,10 +1,11 @@
 import React from "react";
 import wtl from "windsplit";
 import { DotsThreeVertical, Coffee } from "phosphor-react";
-import { ButtonPushable } from "@/components/Button";
 
-import { IconBubbble } from "./Icon";
-import ActiveLink, { A } from "./Links";
+import { ButtonPushable } from "@/components/Button";
+import ActiveLink, { A } from "@/components/Links";
+import { ErrorToast } from '@/components/Toast';
+import { IconBubbble } from "@/components/Icon";
 
 export default function Header({ isHeader }: { isHeader?: boolean }) {
   const tw = {
@@ -46,6 +47,7 @@ export default function Header({ isHeader }: { isHeader?: boolean }) {
               title="Buy us a coffee" 
               optional="text-base -translate-y-1"
               size="px-4 md:px-6 py-2"
+              onClick={() => ErrorToast("Feature Coming Soon 🚀")}
             >
               <Coffee size={22} className="mr-0 sm:mr-2" />
             </ButtonPushable>

@@ -3,6 +3,7 @@ import Script from "next/script";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Nprogress from "nextjs-progressbar";
+import { Toaster } from "react-hot-toast";
 
 import * as gtag from "@/libs/utils/gTag";
 
@@ -52,6 +53,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         showOnShallow
       />
       <Component {...pageProps} />
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          duration: 2000,
+        }}
+      />
     </>
   );
 }

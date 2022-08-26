@@ -21,7 +21,7 @@ export default function Intro({ contents }: { contents: DesignProps }) {
     `),
     container: wtl(`
       my-4 grid grid-cols-12
-      gap-5 px-0 sm:px-4 min-h-[80vh]
+      gap-5 px-0 sm:px-4 min-h-screen
     `),
     images: wtl(`
       w-full min-h-[300px]
