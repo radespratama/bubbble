@@ -1,6 +1,6 @@
 import React from "react";
 import wtl from "windsplit";
-import { List, Coffee } from "phosphor-react";
+import { DotsThreeVertical, Coffee } from "phosphor-react";
 import { ButtonPushable } from "@/components/Button";
 
 import { IconBubbble } from "./Icon";
@@ -29,7 +29,7 @@ export default function Header({ isHeader }: { isHeader?: boolean }) {
         <nav className={tw.navigation}>
           <div className="col-span-1 block md:hidden">
             <button className="p-[6px]">
-              <List size={24} />
+              <DotsThreeVertical size={24} />
             </button>
           </div>
           <div className={`${tw.column} justify-center md:justify-start`}>

@@ -1,29 +1,32 @@
 import React from "react";
 import wtl from "windsplit";
-import { ArrowElbowDownLeft } from "phosphor-react";
+import Dynamic from "next/dynamic";
 
 import { A } from "@/components/Links";
 import Images from "@/components/Images";
+const Download = Dynamic(() => import("./Download"));
 
 import { DesignProps } from "@/libs/types/typing";
 import { urlFor } from "@/libs/config/sanity";
-import Download from "./Download";
 
 export default function Intro({ contents }: { contents: DesignProps }) {
   const tw = {
     links: wtl(`
       inline-flex items-center
-      font-medium hover:underline
-      underline-offset-4
+      font-medium bg-gray-50
+      border-2 border-gray-950
+      px-2 py-1 rounded-lg mx-0 sm:mx-3
+      hover:shadow-3d outline-none
+      transition-all duration-300
     `),
     container: wtl(`
       my-4 grid grid-cols-12
-      gap-5 px-4 min-h-[80vh]
+      gap-5 px-0 sm:px-4 min-h-[80vh]
     `),
     images: wtl(`
-      w-full h-full max-h-[300px]
-      sm:max-h-[360px] md:max-h-[380px]
-      lg:max-h-[430px] xl:max-h-[460px]
+      w-full min-h-[300px]
+      sm:min-h-[360px] md:min-h-[380px]
+      lg:min-h-[430px] xl:min-h-[460px]
     `),
     titleDesign: wtl(`
       text-4xl font-bold
@@ -41,7 +44,6 @@ export default function Intro({ contents }: { contents: DesignProps }) {
   return (
     <>
       <A href="/design" className={tw.links}>
-        <ArrowElbowDownLeft size={22} className="mr-1" />
         Back to Design
       </A>
       <section className={tw.container}>
@@ -57,7 +59,11 @@ export default function Intro({ contents }: { contents: DesignProps }) {
           />
         </div>
         <div className="col-span-12 sm:col-span-4">
-          <Download url={contents.templateUrl} />
+          <Download
+            avatar={urlFor(contents.author.image).url()}
+            authorName={contents.author.name}
+            url={contents.templateUrl}
+          />
         </div>
       </section>
     </>
