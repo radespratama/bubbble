@@ -16,7 +16,7 @@ export default function Images({
   optional,
 }: ImageProps) {
   return (
-    <div className={`relative ${size} ${optional}`}>
+    <div className={`relative cursor-pointer ${size} ${optional}`}>
       <Image
         src={src}
         alt={alt}

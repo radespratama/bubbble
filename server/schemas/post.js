@@ -70,11 +70,6 @@ export default {
       title: "Published at",
       type: "datetime",
     },
-    {
-      name: "body",
-      title: "Body",
-      type: "blockContent",
-    },
   ],
 
   preview: {

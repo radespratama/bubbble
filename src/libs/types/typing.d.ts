@@ -11,6 +11,7 @@ export interface DesignProps {
     name: string;
     image: string;
   };
-  categories: {[key: string]: any};
+  categories: { [key: string]: any };
   mainImage: () => void | string;
+  total?: number;
 }

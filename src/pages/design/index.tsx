@@ -9,7 +9,7 @@ const DesignList = Dynamic(() => import("@/components/DesignList"));
 import SEO from "@/components/SEO";
 
 import { sanityClient } from "@/libs/config/sanity";
-import { queryDynamicPosts } from "@/libs/query";
+import { queryAllPosts } from "@/libs/query";
 import { DesignProps } from "@/libs/types/typing";
 
 const Design: NextPage<{ design: [DesignProps] }> = ({ design }) => {
@@ -38,7 +38,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     "public, s-maxage=10, stale-while-revalidate=59"
   );
 
-  const design = await sanityClient.fetch(queryDynamicPosts);
+  const design = await sanityClient.fetch(queryAllPosts);
 
   return {
     props: {

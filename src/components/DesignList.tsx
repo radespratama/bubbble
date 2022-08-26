@@ -28,7 +28,8 @@ export default function DesignList({
     return () => clearTimeout();
   }, [design]);
 
-  const skeletonContent = Array(6).fill("");
+  const skeletonCount = Object.keys(design);
+
   const router = useRouter();
 
   const tw = {
@@ -45,7 +46,7 @@ export default function DesignList({
     <>
       <section className={tw.containerLayout}>
         {loading ? (
-          skeletonContent.map((index) => (
+          skeletonCount.map((index) => (
             <SkeletonDesign key={`${index}-${Math.random()}`} />
           ))
         ) : (

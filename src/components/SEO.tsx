@@ -14,6 +14,11 @@ export default function SEO({ title, description, url, image = "" }: SEOProps) {
       <link rel="canonical" href={url} />
       <meta name="title" content={title} />
       <meta name="description" content={description} />
+      <meta name="author" content="Bubbble Kit" />
+      <meta
+        name="keywords"
+        content="Web Design, Web Development, UI UX Design, Android"
+      />
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
       <meta property="og:url" content={url} />
