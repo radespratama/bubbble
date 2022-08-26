@@ -1,34 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+  <a href="https://bubbblekit.studio">
+    <img src="https://github.com/radespratama/bubbble/blob/main/public/static/bubbble-banner.png">
+    <h3 align="center">Bubbble KIT</h3>
+  </a>
+</div>
+<p align="center">⚡ Bubbble is a Free, Simple & Modern OnBoarding UI KIT</p>
 
-## Getting Started
+## 📌 Overview
 
-First, run the development server:
+### /pages
+
+✔️ `pages/index.tsx` = Homepage and 6 preview design <br/>
+✔️ `pages/design.tsx` = List all design <br/>
+✔️ `pages/design/[slug].tsx` = Details design
+
+<details>
+  <summary>Sanity API KEYS</summary>
+
+  1. Create a Sanity account <br>
+
+  2. Create new project  <br>
+
+  3. `npm install -g @sanity/cli && sanity init` <br>
+
+  4. After you create new project, Go to your project, you will see the PROJECT ID at the top  <br>
+   
+  ![](https://dl.dropbox.com/s/lgdbm7mvohpq8qe/tutorial.png?dl=0)
+
+  5. Put it into the environment variables according to `.env.example` and you're all set! <br>
+</details>
+
+<br />
+
+## 💻 Installation
+
+Run the package locally
 
 ```bash
-npm run dev
-# or
-yarn dev
+git clone https://github.com/radespratama/bubbble.git bubbble
+
+cd bubbble
+
+# install deps
+npm install || yarn
+
+# run server
+npm run dev || yarn dev
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## ⚡ Tools
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+![Typescript](https://img.shields.io/badge/Typescript-355DAB?style=for-the-badge&logo=Typescript&logoColor=white)
+![NextJs](https://img.shields.io/badge/NextJs-1F2937?style=for-the-badge&logo=next.js&logoColor=white)
+![ReactJs](https://img.shields.io/badge/React-585455?style=for-the-badge&logo=react&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-0284C7?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Sanity](https://img.shields.io/badge/SANITY-FFA451?style=for-the-badge&logo=sanity&logoColor=white)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<br />
